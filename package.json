@@ -1,0 +1,35 @@
+{
+  "name": "underscores",
+  "version": "0.0.1",
+  "description": "A command line utility for generating your Underscores (_s) based Wordpress starter theme.",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keithmorris/node-underscores.git"
+  },
+  "keywords": [
+    "wordpress",
+    "underscores",
+    "_s",
+    "theme",
+    "utility"
+  ],
+  "author": "Keith Morris <standupbass@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keithmorris/underscores/issues"
+  },
+  "homepage": "https://github.com/keithmorris/underscores",
+  "dependencies": {
+    "adm-zip": "^0.4.4",
+    "hyperquest": "^1.0.1",
+    "minimist": "^1.1.0",
+    "prompt": "^0.2.14",
+    "querystring": "^0.2.0",
+    "slugg": "^0.1.2"
+  }
+}
