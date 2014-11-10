@@ -21,15 +21,15 @@
   "author": "Keith Morris <standupbass@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/keithmorris/underscores/issues"
+    "url": "https://github.com/keithmorris/node-underscores/issues"
   },
-  "homepage": "https://github.com/keithmorris/underscores",
+  "homepage": "https://github.com/keithmorris/node-underscores",
   "dependencies": {
     "adm-zip": "^0.4.4",
     "hyperquest": "^1.0.1",
-    "minimist": "^1.1.0",
     "prompt": "^0.2.14",
     "querystring": "^0.2.0",
-    "slugg": "^0.1.2"
+    "slugg": "^0.1.2",
+    "yargs": "^1.3.2"
   }
 }
