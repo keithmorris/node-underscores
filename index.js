@@ -13,7 +13,7 @@ var fs         = require('fs'),
 var url = "http://underscores.me/";
 
 var argv = yargs
-	.usage("Run underscores without command line arguments and you will be prompted for all arguments. " +
+	.usage("Run underscores without command line arguments and you will be prompted for all options. " +
 	"Otherwise, run underscores with arguments to specify one or more options at the command prompt.")
 	.example('$0', "you will be prompted for everything")
 	.example('$0 -n "My Great Theme"', 'You will be prompted for everything but the name of the theme.')
