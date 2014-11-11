@@ -25,7 +25,7 @@ var argv = yargs
 	.describe('slug', 'The theme\'s Wordpress slug (this also defines resultant directory name).')
 	.alias('author', 'a')
 	.describe('author', 'Your theme\'s author.')
-	.alias('url', 'u')
+	.alias('url', ['u', 'author_uri'])
 	.describe('url', 'Your theme\'s author\'s url')
 	.alias('sass', 's')
 	.describe('sass', 'Download the "Sassified" version of the theme.')
