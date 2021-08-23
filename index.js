@@ -10,7 +10,7 @@ var fs         = require('fs'),
 	unzip      = require('adm-zip'),
 	yargs      = require('yargs');
 
-var url = "http://underscores.me/";
+var url = "https://underscores.me/";
 
 var argv = yargs
 	.usage("Run underscores without command line arguments and you will be prompted for all options. " +
