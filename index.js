@@ -63,7 +63,10 @@ promptUser(argv, function (options) {
             files.extractAllTo('./', true);
             console.log('Finished unzipping theme.');
             if (!options.keepZip) {
-                fs.unlink(filepath);
+                fs.unlink(filepath, function (err) {
+                    if (err) throw err;
+                    console.log(filename + ' was deleted');
+                });
             }
         });
     });
