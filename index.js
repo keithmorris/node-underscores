@@ -2,19 +2,18 @@
 /**
  * Created by Keith Morris on 11/10/14.
  */
-"use strict";
-var fs         = require('fs'),
+const fs = require('fs'),
 	hyperquest = require('hyperquest'),
 	promptUser = require('./lib/prompt-user'),
-	qs         = require('querystring'),
-	unzip      = require('adm-zip'),
-	yargs      = require('yargs');
+	qs = require('querystring'),
+	unzip = require('adm-zip'),
+	yargs = require('yargs');
 
-var url = "https://underscores.me/";
+const url = "https://underscores.me/";
 
-var argv = yargs
+const argv = yargs
 	.usage("Run underscores without command line arguments and you will be prompted for all options. " +
-	"Otherwise, run underscores with arguments to specify one or more options at the command prompt.")
+		"Otherwise, run underscores with arguments to specify one or more options at the command prompt.")
 	.example('$0', "you will be prompted for everything")
 	.example('$0 -n "My Great Theme"', 'You will be prompted for everything but the name of the theme.')
 	.alias('name', 'n')
@@ -41,26 +40,26 @@ if (argv.help) {
 }
 
 promptUser(argv, function (options) {
-	var data = qs.stringify(options.params),
+	const data = qs.stringify(options.params),
 		reqOpt = {
 			headers: {
-				'Content-Type'  : 'application/x-www-form-urlencoded',
+				'Content-Type': 'application/x-www-form-urlencoded',
 				'Content-Length': data.length
 			}
-		},
-		filename,
+		};
+	let filename,
 		filepath;
 
 	console.log('Generating and downloading theme.');
-	var req = hyperquest.post(url, reqOpt, function (err, res) {
+	const req = hyperquest.post(url, reqOpt, function (err, res) {
 		filename = qs.parse(res.headers['content-disposition'].split('; ')[1].replace(/"/g, '')).filename;
 		filepath = './' + filename;
-		var zipStream = fs.createWriteStream(filepath);
+		const zipStream = fs.createWriteStream(filepath);
 		res.pipe(zipStream);
 
 		zipStream.on('finish', function () {
 			console.log('Finish downloading theme ' + filename);
-			var files = unzip(filepath);
+			const files = unzip(filepath);
 			files.extractAllTo('./', true);
 			console.log('Finished unzipping theme.');
 			if (!options.keepZip) {
